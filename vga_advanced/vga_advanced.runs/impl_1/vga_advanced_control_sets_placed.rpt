@@ -1,0 +1,71 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Tue Jun  5 21:26:20 2018
+| Host         : localhost.localdomain running 64-bit unknown
+| Command      : report_control_sets -verbose -file vga_advanced_control_sets_placed.rpt
+| Design       : vga_advanced
+| Device       : xc7a35t
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |     6 |
+| Unused register locations in slices containing registers |    36 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            3 |
+|     10 |            3 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               6 |            3 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              20 |            9 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              10 |            3 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------------+--------------------------+---------------------------------+------------------+----------------+
+|        Clock Signal        |       Enable Signal      |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
++----------------------------+--------------------------+---------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG             |                          |                                 |                1 |              2 |
+| ~vga_0/Hsync_OBUF          |                          |                                 |                1 |              2 |
+|  vga_0/s_pixel_clk_reg_n_0 |                          |                                 |                1 |              2 |
+|  vga_0/Hsync_OBUF          | vga_0/s_v_active_reg_n_0 | vga_0/v_line_counter[9]_i_2_n_0 |                3 |             10 |
+| ~vga_0/Hsync_OBUF          |                          | vga_0/v_v_count                 |                5 |             10 |
+|  vga_0/s_pixel_clk_reg_n_0 |                          | vga_0/v_h_count                 |                4 |             10 |
++----------------------------+--------------------------+---------------------------------+------------------+----------------+
+
+
